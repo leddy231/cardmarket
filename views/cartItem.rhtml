@@ -1,0 +1,8 @@
+<tr class="<%= @color %>" id = "cartItem_<%= @id %>">
+    <td class="<%= @color %>"><p><%= @name %></p></td>
+    <td class="<%= @color %>"><p>$<%= @price %></p></td>
+    <td class="<%= @color %>"><p id = "cartItemAmount_<%= @id %>">1x</p></td>
+    <td class="<%= @color %>"><i class="material-icons" onClick = "decreaseCart(<%= @id %>);">remove_circle</i></td> 
+    <td class="<%= @color %>"><i class="material-icons" onClick = "increaseCart(<%= @id %>);">add_circle</i></td>
+    <td class="<%= @color %>"><i class="material-icons" onClick = "deleteCart(<%= @id %>);">delete</i></td>
+</tr>

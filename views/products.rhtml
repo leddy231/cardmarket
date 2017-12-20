@@ -1,0 +1,40 @@
+<% cards = $firebase.get("/cards").body %>
+<div class = "card">
+	<% for card in cards do %>
+		<% @name = card["name"] %>
+		<% @price = card["price"] %>
+		<% @color = card["color"] %>
+		<% @type = card["types"].join(" ") %>
+		<% @img = card["imageUrl"] %>
+		<% @set = card["setName"] %>
+		<% @mana = card["manaCost"] %>
+		<% @id = card["id"] %>
+		<%= erb :card %>
+	<% end %>
+</div>
+<div id = "shoppingFAB" onClick = "showCart();" class = "shoppingFAB">
+	<i class="material-icons">shopping_cart</i>
+	<div id = "shoppingNumber">
+		0
+	</div>
+</div>
+<div id = "cartHolder" class = "cartHolder">
+	<div class = "card">
+		<div class = "centerHor">
+			<span class = "button" onClick = "emptyCart();">
+				<i class="material-icons">remove_shopping_cart</i>
+			</span>
+			<span class = "button" onClick = "hideCart();">
+				<i class="material-icons">close</i>
+			</span>
+			<span class = "button" onClick = "checkout();">
+				<p id = "cartTotal">Total: $0</p>
+				<i class="material-icons">local_shipping</i>
+			</span>
+		</div>
+		<table>
+			<tbody id="shoppingCart" class = "shoppingCart"></tbody>
+		</table>
+	</div>
+</div>
+<script src = "products.js"></script>

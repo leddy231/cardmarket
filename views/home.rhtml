@@ -1,0 +1,23 @@
+<div class = "home">
+    <h1>Steffes Card Market</h1>
+    <p>Welcome to Steffes Card Market, here you can find cards of all types to all prices!</p>
+</div>
+<% cards = $firebase.get("/cards").body %>
+<a class = "slides centerHor" href="/products">
+    <% for card in cards do %>
+        <img class="mySlides" src="<%= card["imageUrl"] %>">
+    <% end %>
+    <% cards.shuffle! %>
+    <% for card in cards do %>
+        <img class="mySlides2" src="<%= card["imageUrl"] %>">
+    <% end %>
+    <% cards.shuffle! %>
+    <% for card in cards do %>
+        <img class="mySlides3" src="<%= card["imageUrl"] %>">
+    <% end %>
+    <% cards.shuffle! %>
+    <% for card in cards do %>
+        <img class="mySlides4" src="<%= card["imageUrl"] %>">
+    <% end %>
+</a>
+<script src = "home.js"></script>

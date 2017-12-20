@@ -1,0 +1,16 @@
+<div class="productCard <%= @color %>">
+	<span class="productName"><p id="productName"><%= @name %></p></span>
+	<span class="buyButton ripple" onClick = "addToCart(<%= @id %>);">
+		<i class="material-icons icon">add_shopping_cart</i>
+	</span>
+	<span class="extra">
+		<div class="mana">
+			<%= @mana %>
+		</div>
+		<p id="set"><%= @set %></p>
+		<p id="type"><%= @type %></p>
+	</span>
+
+	<img src="<%= @img %>" />
+	<p class="productPrice"><%= @price %>$</p>
+</div>
